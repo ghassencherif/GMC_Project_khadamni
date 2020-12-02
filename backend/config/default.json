@@ -1,0 +1,4 @@
+{
+    "mongoUri": "mongodb+srv://khadmni-v2:ghassen123@cluster0.7p2u1.mongodb.net/test",
+    "secretOrKey": "my secret"
+  }

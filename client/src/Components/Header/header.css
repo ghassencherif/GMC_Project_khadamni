@@ -1,0 +1,79 @@
+.header{
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+	box-shadow: 0px 10px 14px -7px rgb(143, 138, 138);
+	
+
+    
+   
+}
+.logo h1{
+    display: inline-block;
+    font-size: 30px;
+	color:#276873 ;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.searchbar{
+    margin-top: 20px;
+	display: inline-block;
+	margin-bottom: 20px;
+    
+}
+
+.login{
+    margin-top: 10px;
+	display: inline-block;
+	margin-bottom: 20px;
+
+   
+}
+
+.login-btn {
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+    padding:3px 20px;
+    margin: 7px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+}
+.login-btn:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+}
+
+.register-btn {
+	box-shadow: 0px 10px 14px -7px #DC2B04 ;
+	background:linear-gradient(to bottom, #cf4646 5%, #d32f2f 100%);
+	background-color:#d13131;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+    padding:3px 20px;
+    margin: 7px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+}
+.register-btn:hover {
+	background:linear-gradient(to bottom, #d32f2f 5%, #cf4646 100%);
+	background-color:#d32f2f;
+}
+.login-btn:active .register-btn:active {
+	position:relative;
+	top:1px;
+}

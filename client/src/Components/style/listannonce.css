@@ -1,0 +1,21 @@
+
+.listAnnonce {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 200px 170px;
+    
+   
+
+}
+.cardtitle, .cardtext{
+    text-align: center;
+}
+
+.card-btn{
+    margin-left:16%;
+    margin-right:80%;
+    width: 170px; 
+}
+.card{
+    margin: 20px;
+}

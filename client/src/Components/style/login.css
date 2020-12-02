@@ -1,0 +1,75 @@
+body {
+    font-family: sans-serif; 
+    background-image: url(../img/background-login.jpg);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.container {
+    width: 300px;
+    margin: auto;
+    margin-top: 5px;
+    border-radius: 25px;
+    background-color: rgba(0,0,0,0,5);
+    box-shadow: 0 0 17px #333;
+    padding: 50px;
+    
+}
+
+.header {
+    text-align: center;
+    padding-top: 75px;
+}
+
+.header h1 {
+    color : black;
+    font-size: 45px;
+    margin-bottom: 80px;
+}
+
+.main{
+    text-align: center;
+}
+
+.main input, button{
+    border-radius: 7px;
+    width: 300px;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.main button{
+    padding-left: 0 ;
+    background-color: #c2c522;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.main button:hover {
+    box-shadow: 2px 2px 5px #555;
+    background-color: #666808;
+}
+
+.main input:hover{
+    box-shadow: 2px 2px 5px #555;
+    background-color: #ddd;
+}
+
+.main span{
+    position: relative;
+}
+
+.main i{
+    position: absolute;
+    left:15px;
+    color: #333;
+    font-size: 16px;
+    top: 2px;
+}
