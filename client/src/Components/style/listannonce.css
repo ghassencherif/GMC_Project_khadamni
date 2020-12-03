@@ -18,4 +18,11 @@
 }
 .card{
     margin: 20px;
+    
+    background-color: white;
+}
+
+.annonce-img{
+    height: 250px;
+    margin-left: -0px;
 }

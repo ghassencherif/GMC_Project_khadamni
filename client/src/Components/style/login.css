@@ -1,75 +1,86 @@
-body {
-    font-family: sans-serif; 
-    background-image: url(../img/background-login.jpg);
-    background-repeat: no-repeat;
-    overflow: hidden;
-    background-size: cover;
+@import url('https://fonts.googleapis.com/css?family=Numans');
+.cont{
+background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
 }
 
-.container {
-    width: 300px;
-    margin: auto;
-    margin-top: 5px;
-    border-radius: 25px;
-    background-color: rgba(0,0,0,0,5);
-    box-shadow: 0 0 17px #333;
-    padding: 50px;
-    
+.container{
+height: 100%;
+align-content: center;
 }
 
-.header {
-    text-align: center;
-    padding-top: 75px;
+.card-login{
+height: 370px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
 }
 
-.header h1 {
-    color : black;
-    font-size: 45px;
-    margin-bottom: 80px;
+.social_icon span{
+font-size: 60px;
+margin-left: 10px;
+color: #FFC312;
 }
 
-.main{
-    text-align: center;
+.social_icon span:hover{
+color: white;
+cursor: pointer;
 }
 
-.main input, button{
-    border-radius: 7px;
-    width: 300px;
-    height: 40px;
-    border: none;
-    outline: none;
-    padding-left: 40px;
-    box-sizing: border-box;
-    font-size: 15px;
-    color: #333;
-    margin-bottom: 40px;
+.card-header h3{
+color: white;
 }
 
-.main button{
-    padding-left: 0 ;
-    background-color: #c2c522;
-    letter-spacing: 1px;
-    font-weight: bold;
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
 }
 
-.main button:hover {
-    box-shadow: 2px 2px 5px #555;
-    background-color: #666808;
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
 }
 
-.main input:hover{
-    box-shadow: 2px 2px 5px #555;
-    background-color: #ddd;
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
 }
 
-.main span{
-    position: relative;
+.remember{
+color: white;
 }
 
-.main i{
-    position: absolute;
-    left:15px;
-    color: #333;
-    font-size: 16px;
-    top: 2px;
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: black;
+background-color: #FFC312;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
 }

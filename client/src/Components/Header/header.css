@@ -1,3 +1,4 @@
+
 .header{
     background-color: white;
     display: flex;
@@ -9,6 +10,9 @@
     
    
 }
+.logo{
+	color:#276873 ;
+}
 .logo h1{
     display: inline-block;
     font-size: 30px;
@@ -16,7 +20,9 @@
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
-
+.logo:hover{
+    color:#276873 ;
+}
 .searchbar{
     margin-top: 20px;
 	display: inline-block;
@@ -51,6 +57,7 @@
 .login-btn:hover {
 	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
 	background-color:#408c99;
+	color: white;
 }
 
 .register-btn {
@@ -72,6 +79,7 @@
 .register-btn:hover {
 	background:linear-gradient(to bottom, #d32f2f 5%, #cf4646 100%);
 	background-color:#d32f2f;
+	color: white;
 }
 .login-btn:active .register-btn:active {
 	position:relative;
