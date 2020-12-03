@@ -32,7 +32,9 @@ function Signup() {
     return (
         <div className='Container'>
       {loading ? (
-        <h1> please wait ...</h1>
+        <div className="spinner-border spinner" role="status">
+        <span className="sr-only spin">Loading...</span>
+      </div>
       ) : user ? (
         <Redirect to='/login' />
       ) : (

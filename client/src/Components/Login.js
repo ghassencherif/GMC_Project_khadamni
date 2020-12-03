@@ -25,7 +25,7 @@ function Login() {
 
 
   return localStorage.getItem('token') ? (
-    <Redirect to='/profile' />
+    <Redirect to='/ProfileUser' />
   ) : loading ? (
     <h1>please wait ....</h1>
   ) : (

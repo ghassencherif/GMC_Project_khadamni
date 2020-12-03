@@ -4,7 +4,7 @@ import ListAnnonce from './ListAnnonce';
 import { useSelector, useDispatch } from "react-redux";
 import { getAnnonces} from "../JS/actions/actionAnnonce";
 import Category from './Category/Category';
-import Footer from "./Footer/Footer";
+
 
 
 function Home() {
@@ -27,7 +27,7 @@ function Home() {
                     <ListAnnonce annonce={annonces} />
                     
           </div>
-   
+
   );
 }
 

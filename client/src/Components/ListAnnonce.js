@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 
 
 import './style/listannonce.css'
+import { Link } from 'react-router-dom';
 
 function ListAnnonce({annonce}) {
     
@@ -17,7 +18,7 @@ function ListAnnonce({annonce}) {
                         <Card.Text className="cardtext">
                         <span>📍</span>{el.address}
                         </Card.Text>
-                        <Button className="card-btn" variant="outline-info">Afficher L'annonce</Button>
+                        <Button className="card-btn" variant="outline-info"><Link style={{ textDecoration: 'none' }} to={`/annoncedetails/${el.title}`} >Afficher L'annonce</Link></Button>
                     </Card.Body>
             </Card>
             )}
