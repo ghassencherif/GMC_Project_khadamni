@@ -5,7 +5,9 @@ const intialState = {
   annonces: [],
   list:  {
     title: "",
+    description:"",
     address: "",
+    phoneNumber:"",
   },
 };
 

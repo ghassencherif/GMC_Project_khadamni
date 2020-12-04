@@ -11,7 +11,7 @@ import { getAnnonces} from "../JS/actions/actionAnnonce";
 
 function Pages() {
 
-    const annonces = useSelector((state) => state.annonceReducer.annonces);
+  const annonces = useSelector((state) => state.annonceReducer.annonces);
   const dispatch = useDispatch();
   
   
@@ -27,8 +27,6 @@ function Pages() {
             <Route path='/chooseuser/signup' exact component={Signup} />
             <Route path='/ProfileUser' exact component={Profile}/>
             <Route path='/annoncedetails/:title' exact render={(props) => <AnnonceDetail annonce={annonces} {...props} />} />
-            
-            
         </Switch>
     )
 }

@@ -44,7 +44,7 @@ function Login() {
                         <form>
                             <div  className = "input-group form-group">
                             <div  className = "input-group-prepend">
-                            <span className = "input-group-text"><i className = "fas fa-user"></i></span>
+                            <span className = "input-group-text">✉️</span>
                                 </div>
                                 <input type = "text" 
                                 className = "form-control" 
@@ -56,7 +56,7 @@ function Login() {
                             </div>
                             <div  className = "input-group form-group">
                             <div  className = "input-group-prepend">
-                            <span className = "input-group-text"><i className = "fas fa-key"></i></span>
+                            <span className = "input-group-text">🔑</span>
                                 </div>
                                 <input type = "password"
                                  className = "form-control" 

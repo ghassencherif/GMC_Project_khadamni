@@ -1,31 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import CarouselS from './Carousel/Carousel';
 import ListAnnonce from './ListAnnonce';
 import { useSelector, useDispatch } from "react-redux";
-import { getAnnonces} from "../JS/actions/actionAnnonce";
+import { getAnnonce} from "../JS/actions/actionAnnonce";
 import Category from './Category/Category';
 
 
 
-function Home() {
 
+
+function Home() {
   const annonces = useSelector((state) => state.annonceReducer.annonces);
   const dispatch = useDispatch();
   
   const getAllAnnonce = () => {
-    dispatch(getAnnonces());
+    dispatch(getAnnonce());
   };
   useEffect(() => {
     getAllAnnonce();
   }, []);
 
+
   return (
-    
           <div>
                     <CarouselS />
                     <Category />
-                    <ListAnnonce annonce={annonces} />
-                    
+                    <ListAnnonce  annonce={annonces} />
           </div>
 
   );

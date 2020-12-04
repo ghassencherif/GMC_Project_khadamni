@@ -1,18 +1,29 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './style/chooseuser.css'
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+
+
+
+
 
 function ChooseUser() {
+    const dispatch = useDispatch();
+    const isAuth = useSelector((state) => state.userReducer.isAuth);
+
     return (
         <div>
+            <h1 className="titre1">YOU ARE ?</h1>
             <div className = "choose-type">
                 <div className="green">
-                <img src="https://lh3.googleusercontent.com/proxy/OIfl0dFsc-uVkZFEDZp_g1EPQpoHceAAQK8GXqOuLwpNpBd1QXfXbZavTIkoAMIclkQ6z3knVqEGIzdVQtDGkSW23BxXQSSDqx0M-XsNzjiDFYU5QUu8zL-2Uf8" alt="particulier" width="500" height="600" />
-                    <a href = "#" className = "particulier" >Client</a>
+                <img src="https://www.mramma.tn/sites/default/files/part.png" alt="particulier" width="500" height="600" />
+                <Link to="/chooseuser/signup" className="particulier" >Client</Link>
                 </div>
                 <div className = "vl"></div>
                 <div className="red">
-                <img src="https://icon-library.com/images/career-icon-png/career-icon-png-1.jpg" alt="particulier" width="500" height="600" />
-                    <a href = "#" className = "professionel" >Agent</a>
+                <img src="https://www.mramma.tn/sites/default/files/pro.png" alt="particulier" width="500" height="600" />
+                <Link to="/agent"  className="particulier" >Agent</Link>
                 </div>
             </div>
         </div>

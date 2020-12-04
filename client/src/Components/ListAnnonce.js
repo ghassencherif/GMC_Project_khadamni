@@ -1,13 +1,14 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+
 import Button from 'react-bootstrap/Button';
-
-
-import './style/listannonce.css'
 import { Link } from 'react-router-dom';
 
+import './style/listannonce.css'
+
+
 function ListAnnonce({annonce}) {
-    
+
     return (
         <div className="listAnnonce">
             {annonce.map((el,i) => 
@@ -18,7 +19,7 @@ function ListAnnonce({annonce}) {
                         <Card.Text className="cardtext">
                         <span>📍</span>{el.address}
                         </Card.Text>
-                        <Button className="card-btn" variant="outline-info"><Link style={{ textDecoration: 'none' }} to={`/annoncedetails/${el.title}`} >Afficher L'annonce</Link></Button>
+                        <Button  className="card-btn" variant="outline-info"><Link style={{ textDecoration: 'none' }} to={`/annoncedetails/${el.title}`} >Afficher L'annonce</Link></Button>
                     </Card.Body>
             </Card>
             )}

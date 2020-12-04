@@ -1,0 +1,28 @@
+.white-box{
+
+    height: 600px;
+}
+.flech{
+    margin-left: 30px;
+    font-size: 40px;
+}
+
+.annonce-img img{
+    width: 300px;
+    height: 300px;
+    margin-left: 250px;
+    margin-top: 70px;
+}
+
+.white-box{
+    display: flex;
+
+}
+
+.annonce-description{
+ margin-top: 30px;
+}
+
+.information{
+    font-size: 30px;
+}
