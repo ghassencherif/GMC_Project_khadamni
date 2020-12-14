@@ -16,3 +16,10 @@ export const getAnnonce = (id) => (dispatch) => {
     .then((res) => dispatch({ type: GET_ANNONCE, payload: res.data }))
     .catch((err) => console.log(err));
 };
+
+export const addAnnonce= (newAnnonce) => (dispatch) => {
+  axios
+    .post("/annonce/addannonce", newAnnonce)
+    .then((res) => dispatch(getAnnonces()))
+    .catch((err) => console.log(err));
+};

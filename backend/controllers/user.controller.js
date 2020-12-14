@@ -1,9 +1,9 @@
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const config = require('config');
-const User = require('../model/User');
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const config = require("config");
+const User = require("../model/User");
 
-const secretOrKey = config.get('secretOrKey');
+const secretOrKey = config.get("secretOrKey");
 
 // Register New User
 exports.register = async (req, res) => {

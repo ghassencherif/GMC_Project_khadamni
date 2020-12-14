@@ -1,36 +1,63 @@
-import React, {useEffect, useState} from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getProfile } from '../../JS/actions/actionUser';
-import './header.css';
-import SearchBar from './SearchBar';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getProfile } from "../../JS/actions/actionUser";
+import "./header.css";
 
 function Header() {
-    const dispatch = useDispatch();
-    const isAuth = useSelector((state) => state.userReducer.isAuth);
-    const [searchAnnonce, setSearchAnnonce] = useState("");
+  const dispatch = useDispatch();
+  const isAuth = useSelector((state) => state.userReducer.isAuth);
+  const notagent = () => {
+    alert(`Your are not an Agent \n You can't add an Ad`);
+  };
+  useEffect(() => {
+    dispatch(getProfile());
+  }, []);
 
-    useEffect(() => {
-        dispatch(getProfile());
-    }, []);
+  return (
+    <div className="header">
+      <div className="logo">
+        <h1>
+          <Link to="/" className="logo" style={{ textDecoration: "none" }}>
+            Khadamni
+          </Link>
+        </h1>
+      </div>
 
-        const handleInput = (e) => {
-        setSearchAnnonce(e.target.value);
-        };
-    return (
-        <div className="header">
-            <div className="logo">
-                    <h1><Link to="/" className="logo" style={{ textDecoration: 'none' }}>Khadamni</Link></h1>
-            </div>
-            <div className="searchbar">
-                <SearchBar handleInput={handleInput} />
-            </div>
-            <div className="login">
-                    <Link to="/login" className="login-btn" style={{ textDecoration: 'none' }}>{!isAuth ? "Login" : "Profile"}</Link>
-                    <Link to="/chooseuser" className="register-btn"  style={{ textDecoration: 'none' }}>{!isAuth ? "Register" : "Créer Annonce"}</Link>
-            </div>
-        </div>
-    )
+      <div className="login">
+        <Link
+          to="/login"
+          className="login-btn"
+          style={{ textDecoration: "none" }}>
+          {!isAuth ? "Login" : "Profile"}
+        </Link>
+
+        {!isAuth ? (
+          <Link
+            to="/chooseuser"
+            className="register-btn"
+            style={{ textDecoration: "none" }}>
+            Register
+          </Link>
+        ) : isAuth.role !== 1 ? (
+          <Link
+            to="/ProfileUser"
+            className="register-btn"
+            style={{ textDecoration: "none" }}
+            onClick={() => notagent()}>
+            Not Authorized
+          </Link>
+        ) : (
+          <Link
+            to="/addannonce"
+            className="register-btn"
+            style={{ textDecoration: "none" }}>
+            Add an AD
+          </Link>
+        )}
+      </div>
+    </div>
+  );
 }
 
-export default Header
+export default Header;

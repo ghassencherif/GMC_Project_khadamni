@@ -16,7 +16,7 @@ const Profile = () => {
   };
   useEffect(() => {
     dispatch(getProfile());
-  }, []); // eslint-disable-line
+  }, []); 
   const capitalize = (s) => {
     if (typeof s !== 'string') return ''
     return s.charAt(0).toUpperCase() + s.slice(1)

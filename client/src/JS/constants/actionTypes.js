@@ -1,6 +1,9 @@
 export const GET_ANNONCES = "GET_ANNONCES";
 export const GET_ANNONCE = "GET_ANNONCE";
 
+export const GET_CATEGORIES = "GET_CATEGORIES";
+
+
 
 
 export const REGISTER_USER = `REGISTER_USER`;

@@ -12,6 +12,7 @@ exports.registerRules = () => [
   }),
 ];
 
+
 exports.annonceRules = () => [
   check(`title`, `title is required`).notEmpty(),
   check(`address`, `address is required`).notEmpty(),

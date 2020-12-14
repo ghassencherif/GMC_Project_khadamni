@@ -13,7 +13,7 @@ import {
   const initialState = {
     loading: false,
     user: null,
-    errors: null,
+    errors: '',
   };
   
   const userReducer = (state = initialState, { type, payload }) => {

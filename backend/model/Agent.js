@@ -1,20 +1,32 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const agentSchema = mongoose.Schema({
-    lastName: {
-        type: String,
-        required: true,
-      },
-    firstName: {
+  lastname: {
+    type: String,
+    required: true,
+  },
+  firstname: {
     type: String,
     required: true,
   },
   email: {
     type: String,
   },
-  password: String,
-  phoneNumber: String,
-  company: String
+  societe: {
+    type: String,
+  },
+  role: {
+    type: Number,
+    default: 1,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  phone: {
+    type: String,
+    required: true,
+  },
 });
 
-module.exports = Agent = mongoose.model('agent', agentSchema);
+module.exports = Agent = mongoose.model("agent", agentSchema);

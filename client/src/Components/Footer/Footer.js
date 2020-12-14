@@ -21,7 +21,6 @@ function Footer() {
             <ui className="list-unstyled">
               <li>GHASSEN CHERIF</li>
               <li>LABIB YANES</li>
-    
             </ui>
           </div>
           {/* Column3 */}

@@ -3,6 +3,7 @@
 body{
   background: #f2f2f2;
   font-family: 'Open Sans', sans-serif;
+  position: sticky;
 }
 
 .search {
@@ -40,7 +41,10 @@ body{
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
-  /* margin-top: 20px; */
+  margin-top: 20px;
   width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+  position: sticky;
  
 }
