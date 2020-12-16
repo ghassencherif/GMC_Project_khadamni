@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import {
   REGISTER_FAIL,
   REGISTER_SUCCESS,
@@ -9,14 +9,14 @@ import {
   GET_PROFILE,
   GET_PROFILE_FAIL,
   GET_PROFILE_SUCCESS,
-} from '../constants/actionTypes';
+} from "../constants/actionTypes";
 
 export const register = (newUser) => async (dispatch) => {
   dispatch({
     type: REGISTER_USER,
   });
   try {
-    const addRes = await axios.post('/user/register', newUser);
+    const addRes = await axios.post("/user/register", newUser);
     dispatch({
       type: REGISTER_SUCCESS,
       payload: addRes.data,
@@ -34,8 +34,8 @@ export const login = (cred) => async (dispatch) => {
     type: LOGIN_USER,
   });
   try {
-    const loginRes = await axios.post('/user/login', cred);
-    localStorage.setItem('token', loginRes.data.token);
+    const loginRes = await axios.post("/user/login", cred);
+    localStorage.setItem("token", loginRes.data.token);
     dispatch({
       type: LOGIN_SUCCESS,
       payload: loginRes.data,
@@ -49,7 +49,7 @@ export const login = (cred) => async (dispatch) => {
 };
 
 export const getProfile = () => async (dispatch) => {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
   const config = {
     headers: {
       Authorization: token,
@@ -59,7 +59,7 @@ export const getProfile = () => async (dispatch) => {
     type: GET_PROFILE,
   });
   try {
-    const isAuth = await axios.get('/user/current', config);
+    const isAuth = await axios.get("/user/current", config);
     dispatch({
       type: GET_PROFILE_SUCCESS,
       payload: isAuth.data,
@@ -70,4 +70,11 @@ export const getProfile = () => async (dispatch) => {
       payload: error.response.data,
     });
   }
+};
+
+export const editUser = (id, editUser) => (dispatch) => {
+  axios
+    .put(`/user/${id}`, editUser)
+    .then((res) => dispatch(getProfile()))
+    .catch((err) => console.log(err));
 };

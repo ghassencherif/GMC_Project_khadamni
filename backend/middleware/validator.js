@@ -13,6 +13,17 @@ exports.registerRules = () => [
 ];
 
 
+// Checking Input Register Agent
+exports.registerRulesA = () => [
+  check(`lastName`, `this field is required!`).notEmpty(),
+  check(`firstName`, `this field is required!`).notEmpty(),
+  check('email', `this should be valid email!`).isEmail(),
+  check('email', `this field is required!`).notEmpty(),
+  check('password', `this field should be at least 7 char!`).isLength({
+    min: 7,
+  }),
+];
+
 exports.annonceRules = () => [
   check(`title`, `title is required`).notEmpty(),
   check(`address`, `address is required`).notEmpty(),
