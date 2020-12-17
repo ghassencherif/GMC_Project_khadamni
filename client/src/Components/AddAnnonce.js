@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { addAnnonce } from "../JS/actions/actionUser";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import "./style/AddAnnonce.css";
 
 function AddAnnonce() {
   const user = useSelector((state) => state.userReducer.user);
   const dispatch = useDispatch();
+  const id = user._id;
   const [newAnnonce, setNewAnnonce] = useState({
     title: "",
     description: "",
@@ -120,11 +122,13 @@ function AddAnnonce() {
             </li>
           </li>
           <li>
-            <input
-              type="submit"
-              value="Add"
-              onClick={() => dispatch(addAnnonce(newAnnonce, user._id))}
-            />
+            <Link to="/">
+              <input
+                type="submit"
+                value="Add"
+                onClick={() => dispatch(addAnnonce(newAnnonce, id))}
+              />
+            </Link>
           </li>
         </ul>
       </form>
