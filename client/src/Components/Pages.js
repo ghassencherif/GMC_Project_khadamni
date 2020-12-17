@@ -20,11 +20,11 @@ function Pages() {
   return (
     <Switch>
       <Route path="/" exact component={Home} />
-      <Route path="/login" exact component={Login} />
+      <Route path="/Login" exact component={Login} />
       <Route path="/chooseuser" exact component={ChooseUser} />
       <Route path="/chooseuser/signup" exact component={Signup} />
-      <Route path="/addannonce" exact component={AddAnnonce} />
-      <Route path="/ProfileUser" exact component={Profile} />
+      <Route path="/ProfileUser/:_id/addannonce" exact component={AddAnnonce} />
+      <Route path="/ProfileUser/" exact component={Profile} />
       <Route path="/ProfileUser/edit/user/:_id" exact component={EdditModal} />
       <Route
         path="/annoncedetails/:title"

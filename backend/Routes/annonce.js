@@ -1,7 +1,7 @@
 const express = require("express");
-const { validator, annonceRules } = require("../middleware/validator");
+// const { validator, annonceRules } = require("../middleware/validator");
 const Annonce = require("../model/Annonce");
-const { addannonce } = require("../controllers/annonce.controller");
+// const { addannonce } = require("../controllers/annonce.controller");
 
 const Router = express.Router();
 
@@ -19,8 +19,13 @@ Router.get("/:_id", (req, res) => {
     .then((annonce) => res.send(annonce))
     .catch((err) => console.log(err));
 });
-// add annoncement path localhost:5000/user/addannonce
-Router.post(`/addannonce`, annonceRules(), validator, addannonce);
+
+Router.get("/userAnnonce/:_id", (req, res) => {
+  User.findById(req.params)
+    .populate("annonceUser")
+    .then((annonce) => res.status(200).send(annonce))
+    .catch((err) => res.send(err));
+});
 
 // delete annonce path localhost:5000/annonce/annoncement/:id
 Router.delete("/delete/:_id", (req, res) => {

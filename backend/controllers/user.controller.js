@@ -7,14 +7,15 @@ const secretOrKey = config.get("secretOrKey");
 
 // Register New User
 exports.register = async (req, res) => {
-  const { lastName, firstName, email, password, phoneNumber } = req.body;
+  const { lastName, firstName, role, email, password, phoneNumber } = req.body;
   try {
-    const searchRes = await User.findOne({ email });
+    const searchRes = await User.findOne({ email }).populate("annonceUser");
     if (searchRes)
       return res.status(401).json({ msg: `user already exists !!` });
     const newUser = new User({
       lastName,
       firstName,
+      role,
       email,
       password,
       phoneNumber,
@@ -42,6 +43,7 @@ exports.login = async (req, res) => {
       id: user._id,
       lastName: user.lastName,
       firstName: user.firstName,
+      role: user.role,
       email: user.email,
       phoneNumber: user.phoneNumber,
     };

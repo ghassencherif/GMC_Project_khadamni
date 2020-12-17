@@ -78,3 +78,10 @@ export const editUser = (id, editUser) => (dispatch) => {
     .then((res) => dispatch(getProfile()))
     .catch((err) => console.log(err));
 };
+
+export const addAnnonce = (newAnnonce, id) => (dispatch) => {
+  axios
+    .post(`/user/${id}/addannonce`, newAnnonce)
+    .then((res) => dispatch(getProfile()))
+    .catch((err) => console.log("chfama"));
+};

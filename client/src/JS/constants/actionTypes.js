@@ -3,9 +3,6 @@ export const GET_ANNONCE = "GET_ANNONCE";
 
 export const GET_CATEGORIES = "GET_CATEGORIES";
 
-
-
-
 export const REGISTER_USER = `REGISTER_USER`;
 export const REGISTER_SUCCESS = `REGISTER_SUCCESS`;
 export const REGISTER_FAIL = `REGISTER_FAIL`;

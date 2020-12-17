@@ -11,6 +11,7 @@ function Signup() {
   const dispatch = useDispatch();
   const [lastName, setLastName] = useState();
   const [firstName, setFirstName] = useState();
+  const [role, setRole] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [phoneNumber, setPhoneNumber] = useState();
@@ -20,6 +21,7 @@ function Signup() {
       register({
         lastName,
         firstName,
+        role,
         email,
         password,
         phoneNumber,
@@ -60,6 +62,28 @@ function Signup() {
                 name="firstName"
                 onChange={(e) => setFirstName(e.target.value)}
               />
+            </div>
+
+            <div className="form-group">
+              <label>Client or Agent ?</label>
+              <br />
+              <input
+                type="radio"
+                value="0"
+                id="client"
+                name="role"
+                onChange={(e) => setRole(e.target.value)}
+              />
+              <label for="client"> Client</label>
+              <br />
+              <input
+                type="radio"
+                value="1"
+                id="agent"
+                name="role"
+                onChange={(e) => setRole(e.target.value)}
+              />
+              <label for="agent"> Agent</label>
             </div>
 
             <div className="form-group">

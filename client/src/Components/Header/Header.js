@@ -26,7 +26,7 @@ function Header() {
 
       <div className="login">
         <Link
-          to="/login"
+          to="/Login"
           className="login-btn"
           style={{ textDecoration: "none" }}>
           {!isAuth ? "Login" : "Profile"}
@@ -49,7 +49,7 @@ function Header() {
           </Link>
         ) : (
           <Link
-            to="/addannonce"
+            to={`/ProfileUser/${isAuth._id}/addannonce`}
             className="register-btn"
             style={{ textDecoration: "none" }}>
             Add an AD

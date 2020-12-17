@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { addAnnonce } from "../JS/actions/actionAnnonce";
-import { useDispatch } from "react-redux";
+import { addAnnonce } from "../JS/actions/actionUser";
+import { useDispatch, useSelector } from "react-redux";
 import "./style/AddAnnonce.css";
 
 function AddAnnonce() {
+  const user = useSelector((state) => state.userReducer.user);
   const dispatch = useDispatch();
   const [newAnnonce, setNewAnnonce] = useState({
     title: "",
@@ -122,7 +123,7 @@ function AddAnnonce() {
             <input
               type="submit"
               value="Add"
-              onClick={() => dispatch(addAnnonce(newAnnonce))}
+              onClick={() => dispatch(addAnnonce(newAnnonce, user._id))}
             />
           </li>
         </ul>

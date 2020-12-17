@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProfile } from "../JS/actions/actionUser";
 import "./style/ProfileUser.css";
 
-
 const Profile = () => {
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.userReducer.isAuth);
@@ -27,7 +26,7 @@ const Profile = () => {
       <span className="sr-only spin">Loading...</span>
     </div>
   ) : !isAuth ? (
-    <Redirect to="/login" />
+    <Redirect to="/Login" />
   ) : (
     <div>
       {/* <pre>{JSON.stringify(user)}</pre> */}
@@ -95,7 +94,11 @@ const Profile = () => {
       </div>
       <div className="annonce-sim">
         <h2>List of Ads</h2>
-        <h3>you do not have the right to create an ad</h3>
+        {isAuth.role !== 1 ? (
+          <h3>you do not have the right to create an ad</h3>
+        ) : (
+          <p>test</p>
+        )}
       </div>
     </div>
   );

@@ -1,21 +1,24 @@
-
-import { GET_ANNONCES, GET_ANNONCE } from "../constants/actionTypes";
+import {
+  GET_ANNONCES,
+  GET_ANNONCE,
+  GET_USER_ANNONCE,
+} from "../constants/actionTypes";
 
 const intialState = {
   annonces: [],
-  list:  {
+  list: {
     title: "",
-    description:"",
+    description: "",
     address: "",
-    phoneNumber:"",
+    phoneNumber: "",
   },
 };
 
- const annonceReducer = (state = intialState, action) => {
+const annonceReducer = (state = intialState, action) => {
   switch (action.type) {
     case GET_ANNONCES:
       return { ...state, annonces: action.payload };
-      case GET_ANNONCE:
+    case GET_ANNONCE:
       return { ...state, list: action.payload[0] };
 
     default:
