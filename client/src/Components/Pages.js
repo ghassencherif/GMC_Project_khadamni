@@ -10,6 +10,7 @@ import AnnonceDetail from "./AnnonceDetail";
 import { getAnnonces } from "../JS/actions/actionAnnonce";
 import AddAnnonce from "./AddAnnonce";
 import EdditModal from "./EdditModal";
+import EditAnnonce from "./EditAnnonce";
 
 function Pages() {
   const annonces = useSelector((state) => state.annonceReducer.annonces);
@@ -26,6 +27,11 @@ function Pages() {
       <Route path="/ProfileUser/:_id/addannonce" exact component={AddAnnonce} />
       <Route path="/ProfileUser/" exact component={Profile} />
       <Route path="/ProfileUser/edit/user/:_id" exact component={EdditModal} />
+      <Route
+        path="/ProfileUser/edit-annonce/:_id"
+        exact
+        component={EditAnnonce}
+      />
       <Route
         path="/annoncedetails/:title"
         exact

@@ -14,3 +14,19 @@ export const getAnnonce = (id) => (dispatch) => {
     .then((res) => dispatch({ type: GET_ANNONCE, payload: res.data }))
     .catch((err) => console.log(err));
 };
+
+
+export const deleteAnnonce = (id) => (dispatch) => {
+  axios
+    .delete(`/annonce/delete/${id}`)
+    .then((res) => dispatch(getAnnonces()))
+    .catch((err) => console.log(err));
+};
+
+
+export const editAnnonce = (id, editAnnonce) => (dispatch) => {
+  axios
+    .put(`/annonce/update/${id}`, editAnnonce)
+    .then((res) => dispatch(getAnnonce(id)))
+    .catch((err) => console.log(err));
+};

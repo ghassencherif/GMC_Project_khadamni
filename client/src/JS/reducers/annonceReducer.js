@@ -1,8 +1,4 @@
-import {
-  GET_ANNONCES,
-  GET_ANNONCE,
-  GET_USER_ANNONCE,
-} from "../constants/actionTypes";
+import { GET_ANNONCES, GET_ANNONCE } from "../constants/actionTypes";
 
 const intialState = {
   annonces: [],

@@ -27,7 +27,7 @@ Router.get("/userAnnonce/:_id", (req, res) => {
     .catch((err) => res.send(err));
 });
 
-// delete annonce path localhost:5000/annonce/annoncement/:id
+// delete annonce path localhost:5000/annonce/delete/:id
 Router.delete("/delete/:_id", (req, res) => {
   let { _id } = req.params;
   Annonce.findByIdAndDelete({ _id })
@@ -35,7 +35,7 @@ Router.delete("/delete/:_id", (req, res) => {
     .catch((err) => res.send(err));
 });
 
-// delete annonce path localhost:5000/annonce/update/:id
+// update annonce path localhost:5000/annonce/update/:id
 
 Router.put("/update/:_id", (req, res) => {
   let { _id } = req.params;
