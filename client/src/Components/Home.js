@@ -4,6 +4,7 @@ import ListAnnonce from "./ListAnnonce";
 import { useSelector, useDispatch } from "react-redux";
 import { getAnnonce } from "../JS/actions/actionAnnonce";
 import SearchBar from "./Header/SearchBar";
+import Footer from "../Components/Footer/Footer";
 
 function Home() {
   const [searchAnnonce, setSearchAnnonce] = useState("");
@@ -39,6 +40,7 @@ function Home() {
               .includes(searchAnnonce.toLowerCase().trim())
         )}
       />
+      <Footer />
     </div>
   );
 }

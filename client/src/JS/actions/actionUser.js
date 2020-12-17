@@ -9,6 +9,7 @@ import {
   GET_PROFILE,
   GET_PROFILE_FAIL,
   GET_PROFILE_SUCCESS,
+  GET_USER_ANNONCE
 } from "../constants/actionTypes";
 
 export const register = (newUser) => async (dispatch) => {
@@ -84,4 +85,11 @@ export const addAnnonce = (newAnnonce, id) => (dispatch) => {
     .post(`/user/${id}/addannonce`, newAnnonce)
     .then((res) => dispatch(getProfile()))
     .catch((err) => console.log("chfama"));
+};
+
+export const getUserAnnonce = (id) => (dispatch) => {
+  axios
+    .get(`/user/userAnnonce/${id}`)
+    .then((res) => dispatch({ type: GET_USER_ANNONCE, payload: res.data }))
+    .catch((err) => console.log(err));
 };

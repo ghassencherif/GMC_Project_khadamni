@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Redirect, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfile } from "../JS/actions/actionUser";
+import AnnonceUser from "./AnnonceUser";
 import "./style/ProfileUser.css";
 
 const Profile = () => {
@@ -97,7 +98,7 @@ const Profile = () => {
         {isAuth.role !== 1 ? (
           <h3>you do not have the right to create an ad</h3>
         ) : (
-          <p>test</p>
+          <AnnonceUser />
         )}
       </div>
     </div>
