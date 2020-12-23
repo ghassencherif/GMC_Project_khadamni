@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
-import { login } from "../JS/actions/actionUser";
-import "./style/login.css";
+import { getProfile, login } from "../../../JS/actions/actionUser";
+import "./login.css";
 
 function Login() {
   const dispatch = useDispatch();
+  const [error, setError] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const loading = useSelector((state) => state.userReducer.loading);
+  const errors = useSelector((state) => state.userReducer.errors);
   const loginUser = (e) => {
     e.preventDefault();
     dispatch(
@@ -18,6 +20,11 @@ function Login() {
       })
     );
   };
+
+  useEffect(() => {
+    dispatch(getProfile());
+    setError(errors);
+  }, []);
 
   return localStorage.getItem("token") ? (
     <Redirect to={`/ProfileUser/`} />
@@ -31,6 +38,12 @@ function Login() {
         <div className="card-login">
           <div className="card-header">
             <h3>Sign In </h3>
+            {errors === "Unauthorized" ? (
+              <h3></h3>
+            ) : (
+              <h6 style={{ color: "red" }}>Email or Password are wrong</h6>
+            )}
+
             <div className="d-flex justify-content-end social_icon">
               <span>
                 <i className="fab fa-facebook-square"></i>

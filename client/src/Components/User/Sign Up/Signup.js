@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { register } from "../JS/actions/actionUser";
-import "../Components/style/signup.css";
+import { register } from "../../../JS/actions/actionUser";
+import "./signup.css";
 
-function Signup() {
+function Signup(props) {
   const loading = useSelector((state) => state.userReducer.loading);
   const user = useSelector((state) => state.userReducer.user);
   const dispatch = useDispatch();
@@ -28,6 +28,10 @@ function Signup() {
       })
     );
   };
+
+  useEffect(() => {
+    props.match.params.client === "Client" ? setRole(0) : setRole(1);
+  }, [setRole]);
 
   return (
     <div className="Container">
@@ -62,28 +66,6 @@ function Signup() {
                 name="firstName"
                 onChange={(e) => setFirstName(e.target.value)}
               />
-            </div>
-
-            <div className="form-group">
-              <label>Client or Agent ?</label>
-              <br />
-              <input
-                type="radio"
-                value="0"
-                id="client"
-                name="role"
-                onChange={(e) => setRole(e.target.value)}
-              />
-              <label for="client"> Client</label>
-              <br />
-              <input
-                type="radio"
-                value="1"
-                id="agent"
-                name="role"
-                onChange={(e) => setRole(e.target.value)}
-              />
-              <label for="agent"> Agent</label>
             </div>
 
             <div className="form-group">

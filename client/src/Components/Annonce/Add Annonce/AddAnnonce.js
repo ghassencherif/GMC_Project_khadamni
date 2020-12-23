@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { addAnnonce } from "../JS/actions/actionUser";
+import { addAnnonce } from "../../../JS/actions/actionUser";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import "./style/AddAnnonce.css";
+import "./AddAnnonce.css";
 
 function AddAnnonce() {
   const user = useSelector((state) => state.userReducer.user);

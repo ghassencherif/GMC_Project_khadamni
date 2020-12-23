@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { editAnnonce } from "../JS/actions/actionAnnonce";
+import { editAnnonce, getAnnonce } from "../../../JS/actions/actionAnnonce";
 
 function EditAnnonce(props) {
-  const annonces = useSelector((state) => state.annonceReducer.annonces);
+  const list = useSelector((state) => state.annonceReducer.list);
   const id = props.match.params._id;
   const [updateAnnonce, setUpdateAnnonce] = useState([
     {
@@ -17,7 +17,8 @@ function EditAnnonce(props) {
   ]);
 
   useEffect(() => {
-    setUpdateAnnonce(annonces);
+    dispatch(getAnnonce(id));
+    setUpdateAnnonce(list);
   }, []);
 
   const dispatch = useDispatch();
@@ -33,8 +34,8 @@ function EditAnnonce(props) {
           <Form.Label>Title</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Title"
             name="title"
+            defaultValue={list.title}
             onChange={handleChange}
           />
         </Form.Group>
@@ -43,6 +44,7 @@ function EditAnnonce(props) {
           <Form.Label>Description</Form.Label>
           <Form.Control
             as="textarea"
+            defaultValue={list.description}
             rows={3}
             name="description"
             onChange={handleChange}
@@ -53,8 +55,8 @@ function EditAnnonce(props) {
           <Form.Label>Address</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Your New Address"
             name="address"
+            defaultValue={list.address}
             onChange={handleChange}
           />
         </Form.Group>
@@ -63,7 +65,7 @@ function EditAnnonce(props) {
           <Form.Label>Phone Number</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Phone Number"
+            defaultValue={list.phoneNumber}
             name="phoneNumber"
             onChange={handleChange}
           />

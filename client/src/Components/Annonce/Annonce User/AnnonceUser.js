@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "react-bootstrap/Button";
-import { getUserAnnonce } from "../JS/actions/actionUser";
-import { deleteAnnonce } from "../JS/actions/actionAnnonce";
+import { getUserAnnonce } from "../../../JS/actions/actionUser";
+import { deleteAnnonce } from "../../../JS/actions/actionAnnonce";
 import { Link } from "react-router-dom";
 
 function AnnonceUser() {

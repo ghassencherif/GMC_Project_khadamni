@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
-import { editUser } from "../JS/actions/actionUser";
+import { editUser } from "../../../JS/actions/actionUser";
 
-function EdditModal() {
+function EdditModal(props) {
   const user = useSelector((state) => state.userReducer.user);
   const [updateUser, setUpdateUser] = useState({
     lastName: "",
@@ -32,7 +32,7 @@ function EdditModal() {
           <Form.Label>First Name</Form.Label>
           <Form.Control
             type="text"
-            placeholder="First Name"
+            defaultValue={user.firstName}
             name="firstName"
             onChange={handleChange}
           />
@@ -42,7 +42,7 @@ function EdditModal() {
           <Form.Label>Last Name</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Last Name"
+            defaultValue={user.lastName}
             name="lastName"
             onChange={handleChange}
           />
@@ -52,7 +52,7 @@ function EdditModal() {
           <Form.Label>Email</Form.Label>
           <Form.Control
             type="email"
-            placeholder="Email"
+            defaultValue={user.email}
             name="email"
             onChange={handleChange}
           />
@@ -62,7 +62,7 @@ function EdditModal() {
           <Form.Label>Phone Number</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Phone Number"
+            defaultValue={user.phoneNumber}
             name="phoneNumber"
             onChange={handleChange}
           />

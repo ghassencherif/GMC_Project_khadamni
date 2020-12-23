@@ -1,11 +1,10 @@
-import React from "react";
-import "./style/chooseuser.css";
+import React, { useState } from "react";
+import "./chooseuser.css";
 import { Link } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
 
 function ChooseUser() {
-  // const dispatch = useDispatch();
-  // const isAuth = useSelector((state) => state.userReducer.isAuth);
+  const [client, setClient] = useState("Client");
+  const [agent, setAgent] = useState("Agent");
 
   return (
     <div>
@@ -18,7 +17,7 @@ function ChooseUser() {
             width="500"
             height="600"
           />
-          <Link to="/chooseuser/signup" className="particulier">
+          <Link to={`/chooseuser/signup/${client}`} className="particulier">
             Client
           </Link>
         </div>
@@ -30,7 +29,7 @@ function ChooseUser() {
             width="500"
             height="600"
           />
-          <Link to="/agent" className="particulier">
+          <Link to={`/chooseuser/signup/${agent}`} className="particulier">
             Agent
           </Link>
         </div>

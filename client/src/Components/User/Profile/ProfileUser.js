@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Redirect, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getProfile } from "../JS/actions/actionUser";
-import AnnonceUser from "./AnnonceUser";
-import "./style/ProfileUser.css";
+import { getProfile } from "../../../JS/actions/actionUser";
+import AnnonceUser from "../../Annonce/Annonce User/AnnonceUser";
+import "./ProfileUser.css";
 
 const Profile = () => {
   const dispatch = useDispatch();

@@ -2,12 +2,14 @@ import { GET_ANNONCES, GET_ANNONCE } from "../constants/actionTypes";
 
 const intialState = {
   annonces: [],
-  list: {
-    title: "",
-    description: "",
-    address: "",
-    phoneNumber: "",
-  },
+  list: [
+    {
+      title: "",
+      description: "",
+      address: "",
+      phoneNumber: "",
+    },
+  ],
 };
 
 const annonceReducer = (state = intialState, action) => {

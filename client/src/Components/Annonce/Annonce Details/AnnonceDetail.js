@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getProfile } from "../JS/actions/actionUser";
-import "./style/AnnonceDetail.css";
+import { getProfile } from "../../../JS/actions/actionUser";
+import "./AnnonceDetail.css";
 import Button from "react-bootstrap/esm/Button";
 
 function AnnonceDetail(props) {
